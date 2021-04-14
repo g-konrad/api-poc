@@ -1,13 +1,16 @@
-import fastify from 'fastify'
+import fastify, { FastifyLoggerInstance } from 'fastify'
 import swagger from 'fastify-swagger'
 import type { FastifyInstance } from 'fastify'
 import type { Server, IncomingMessage, ServerResponse } from 'http'
 
 import swaggerConfig from './swagger'
+import { ping } from './routes'
 
 const app: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify({ logger: true })
 
-export default () => {
+export default async (): Promise<FastifyInstance<Server, IncomingMessage, ServerResponse, FastifyLoggerInstance>> => {
+  await app.register(swagger, swaggerConfig)
+
   const opts = {
     schema: {
       response: {
@@ -22,19 +25,11 @@ export default () => {
     }
   }
 
-  app.get('/', opts, (req, res) => {
-    res.send({ hello: 'world' })
+  app.get('/', opts, async (_, res) => {
+    await res.send({ hello: 'world' })
   })
 
-  app.register(swagger, swaggerConfig)
+  app.route(ping())
 
-  app.ready((err) => err != null ? err : app.swagger())
-
-  app.listen(5555, '0.0.0.0', (err, address) => {
-    if (err) {
-      app.log.error(err)
-      process.exit(1)
-    }
-    console.log(`Server listening at ${address}`)
-  })
+  return app
 }

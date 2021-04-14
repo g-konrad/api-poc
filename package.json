@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "watch": "tsc --watch --preserveWatchOutput --pretty",
-    "dev": "cross-env NODE_ENV=development nodemon",
+    "dev": "cross-env NODE_ENV=development nodemon src/main.ts",
     "build": "rimraf build && tsc",
-    "start": "node build/main.js"
+    "start": "cross-env NODE_ENV=production node build/main.js"
   },
   "author": "Gustavo Konrad",
   "devDependencies": {
@@ -23,6 +23,7 @@
     "nodemon": "^2.0.7",
     "pg-promise": "^10.10.1",
     "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
   "dependencies": {
