@@ -1,6 +1,5 @@
-use actix_web::web;
-
 use crate::routes::{file_upload, ping, websocket};
+use actix_web::web;
 
 pub fn config(cfg: &mut web::ServiceConfig) {
     cfg.route("/ping", web::get().to(ping::index))

@@ -1,2 +1,2 @@
-pub mod app_config;
-mod routes;
+pub mod config;
+pub mod routes;

@@ -1,7 +1,7 @@
 use actix_web::{middleware::Logger, App, HttpServer};
 use env_logger::{Builder, Env};
 
-use lib::app_config::config;
+use lib::config;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -11,7 +11,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .wrap(Logger::default())
             .wrap(Logger::new("%a %{User-Agent}i"))
-            .configure(config)
+            .configure(config::config)
     })
     .bind("0.0.0.0:8080")?
     .workers(16)
