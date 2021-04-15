@@ -19,6 +19,9 @@
     "node": true,
     "es2020": true
   },
+  "rules": {
+    "require-await": "off"
+  },
   "overrides": [
     {
       "files": [

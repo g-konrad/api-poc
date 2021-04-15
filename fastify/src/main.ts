@@ -9,6 +9,8 @@ import createApp from './app'
 
 const NUM_CPUS = os.cpus().length
 
+// This is the only file where impure code is allowed
+/* eslint-disable-next-line functional/no-return-void */
 const run = (app: FastifyInstance<Server, IncomingMessage, ServerResponse>): void => {
   app.listen(5555, '0.0.0.0', (err, address) => {
     if (err != null) {
