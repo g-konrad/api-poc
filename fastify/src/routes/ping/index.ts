@@ -1,6 +1,6 @@
 import type { Route } from '../../types/route'
 
-export default (): Route =>
+const get = (): Route =>
   ({
     method: 'GET',
     url: '/ping',
@@ -13,3 +13,5 @@ export default (): Route =>
     },
     handler: async (): Promise<string> => 'pong'
   })
+
+export default { get }

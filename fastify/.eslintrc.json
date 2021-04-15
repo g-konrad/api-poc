@@ -20,7 +20,10 @@
     "es2020": true
   },
   "rules": {
-    "require-await": "off"
+    // Precisamos dessa regra off pra satisfazer a tipagem do fastify
+    "@typescript-eslint/require-await": "off",
+    // Essa regra entra em choque com functional
+    "@typescript-eslint/consistent-type-definitions": "off"
   },
   "overrides": [
     {
