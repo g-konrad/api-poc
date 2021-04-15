@@ -23,10 +23,14 @@ pub async fn index() -> impl Responder {
 pub async fn upload_file(mut payload: Multipart) -> impl Responder {
     // Multipart é um stream de Fields (que são streams de bytes).
     // Com `while let` nós capturamos os fields que chegam, de maneira assíncrona.
+    let mut filenames = vec![];
     while let Ok(Some(mut field)) = payload.try_next().await {
         let content_type = field.content_disposition().unwrap();
         let filename = content_type.get_filename().unwrap();
-        let filepath = format!("./tmp/{}", sanitize_filename::sanitize(&filename));
+        let sanitized = sanitize_filename::sanitize(&filename);
+        let filepath = format!("./tmp/{}", sanitized);
+
+        filenames.push(sanitized);
 
         // Depois de criar um nome sanitizado para o arquivo, criamos o arquivo em si no diretório
         // <project_root>/tmp, de maneira assíncrona.
@@ -44,4 +48,6 @@ pub async fn upload_file(mut payload: Multipart) -> impl Responder {
     }
 
     HttpResponse::Ok()
+        .content_type("text/html; charset=utf-8")
+        .body(filenames.join(", "))
 }
