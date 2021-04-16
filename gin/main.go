@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/api-poc/gin/routes"
+	"gin-poc/routes"
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"

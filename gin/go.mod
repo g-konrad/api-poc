@@ -1,4 +1,4 @@
-module chi
+module gin-poc
 
 go 1.16
 
