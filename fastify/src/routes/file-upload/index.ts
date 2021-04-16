@@ -7,7 +7,7 @@ const TEMPLATE = `
   <html>
       <head><title>Upload Test</title></head>
       <body>
-          <form target="/" method="post" enctype="multipart/form-data">
+          <form target="" method="post" enctype="multipart/form-data">
               <input type="file" multiple name="file"/>
               <button type="submit">Submit</button>
           </form>
