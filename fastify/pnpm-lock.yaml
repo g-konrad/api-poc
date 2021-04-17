@@ -14,6 +14,7 @@ specifiers:
   fastify: ^3.14.2
   fastify-multipart: ^4.0.3
   fastify-swagger: ^4.6.0
+  fluture: ^14.0.0
   fp-ts: ^2.10.0
   nodemon: ^2.0.7
   pg-promise: ^10.10.1
@@ -25,6 +26,7 @@ dependencies:
   fastify: 3.14.2
   fastify-multipart: 4.0.3
   fastify-swagger: 4.6.0
+  fluture: 14.0.0
   fp-ts: 2.10.0
 
 devDependencies:
@@ -1228,6 +1230,14 @@ packages:
     resolution: {integrity: sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==}
     dev: true
 
+  /fluture/14.0.0:
+    resolution: {integrity: sha512-pENtLF948a8DfduVKugT8edTAbFi4rBS94xjHwzLanQqIu5PYtLGl+xqs6H8TaIRL7z/B0cDpswdINzH/HRUGA==}
+    engines: {node: '>=4.0.0'}
+    dependencies:
+      sanctuary-show: 2.0.0
+      sanctuary-type-identifiers: 3.0.0
+    dev: false
+
   /fp-ts/2.10.0:
     resolution: {integrity: sha512-FC2VYweD6QJ5qIKq2wGXRuTtMxIRrXqLlIhRDnxVisbmjEEENHPyf6vrQ9Tdj5Pha1o/SbdYBrfANpvaUxW0dg==}
     dev: false
@@ -2284,6 +2294,14 @@ packages:
     resolution: {integrity: sha512-PaUSFsUaNNuKwkBijoAPHAK6/eM6VirvyPWlZ7BAQy4D+hCvh4B6lIG+nPdhbFfIbP+gTGBcrdsOaUs0F+ZBOQ==}
     dependencies:
       ret: 0.2.2
+    dev: false
+
+  /sanctuary-show/2.0.0:
+    resolution: {integrity: sha512-REj4ZiioUXnDLj6EpJ9HcYDIEGaEexmB9Fg5o6InZR9f0x5PfnnC21QeU9SZ9E7G8zXSZPNjy8VRUK4safbesw==}
+    dev: false
+
+  /sanctuary-type-identifiers/3.0.0:
+    resolution: {integrity: sha512-YFXYcG0Ura1dSPd/1xLYtE2XAWUEsBHhMTZvYBOvwT8MeFQwdUOCMm2DC+r94z6H93FVq0qxDac8/D7QpJj6Mg==}
     dev: false
 
   /secure-json-parse/2.4.0:
