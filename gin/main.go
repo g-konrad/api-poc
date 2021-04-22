@@ -15,10 +15,15 @@ func main() {
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
 
+	r.LoadHTMLGlob("templates/*")
+
 	url := ginSwagger.URL("http://localhost:8080/swagger/doc.json") // The url pointing to API definition
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 
 	r.GET("/ping", routes.PingGet)
+
+	r.GET("/upload-files", routes.RenderTemplateUploadFiles)
+	r.POST("/upload-files", routes.UploadFiles)
 
 	r.Run(":3000")
 }
