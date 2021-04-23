@@ -7,6 +7,10 @@ use lib::config;
 async fn main() -> std::io::Result<()> {
     Builder::from_env(Env::default().default_filter_or("info")).init();
 
+    let num_cpus = num_cpus::get();
+    let workers = (num_cpus * 2) + 1;
+    println!("Running {} workers", workers);
+
     HttpServer::new(|| {
         App::new()
             .wrap(Logger::default())
@@ -14,7 +18,7 @@ async fn main() -> std::io::Result<()> {
             .configure(config::config)
     })
     .bind("0.0.0.0:8080")?
-    .workers(16)
+    .workers(workers)
     .run()
     .await
 }
