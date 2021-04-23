@@ -1,5 +1,5 @@
 [package]
-name = "api-actix"
+name = "poc"
 version = "0.1.0"
 authors = ["Gustavo Konrad <g.konrad@outlook.com>"]
 edition = "2018"
@@ -10,7 +10,7 @@ name = "lib"
 path = "lib/lib.rs"
 
 [[bin]]
-name = "app"
+name = "poc"
 path = "src/main.rs"
 
 [dependencies]
