@@ -1,0 +1,14 @@
+curl 'http://staging.yungas.com.br/helpdesk/demand/' \
+  -H 'Connection: keep-alive' \
+  -H 'Pragma: no-cache' \
+  -H 'Cache-Control: no-cache' \
+  -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36' \
+  -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundarykuG2DArIBkuTyjdu' \
+  -H 'Accept: /' \
+  -H 'Sec-GPC: 1' \
+  -H 'Origin: http://staging.yungas.com.br/' \
+  -H 'Referer: http://staging.yungas.com.br/helpdesk/' \
+  -H 'Accept-Language: en-US,en;q=0.9' \
+  -H 'Cookie: remember_token=4296|dc51a015118673a6f5e702d99971475911c8fab31bbaa58aa065310ec4b425141e471be37594b66e2d9c848ccfd1700235b04052085bd7187747e015122a8350; metabase.SESSION=8cf296d2-6419-47d7-892b-2634a3c8684b; session=.eJwlzjsOwjAMANC7eO4Qu_Gvl6mc2BFITK2YEHdn4J3gfeBcV90POFa87trgfCYcIK2hsgxkYbKu2tFFB09pbFVRnB6dcReTUPQxTQn3lVo9zAR15FqV6i2nlHYijBk6KczNotNwVGzDmHwWN6JM2qUtcptcsMH7ruuf6eQC3x-pUC5p.YILf4Q.Yw_7arLT-DjUcIuGLasEXmeTjvA' \
+  --data-raw $'------WebKitFormBoundarykuG2DArIBkuTyjdu\r\nContent-Disposition: form-data; name="subject"\r\n\r\nteste\r\n------WebKitFormBoundarykuG2DArIBkuTyjdu\r\nContent-Disposition: form-data; name="department"\r\n\r\n18\r\n------WebKitFormBoundarykuG2DArIBkuTyjdu\r\nContent-Disposition: form-data; name="fileInput"; filename="604f51917a2ea.jpg"\r\nContent-Type: image/jpeg\r\n\r\n\r\n------WebKitFormBoundarykuG2DArIBkuTyjdu\r\nContent-Disposition: form-data; name="message"\r\n\r\nteste\r\n------WebKitFormBoundarykuG2DArIBkuTyjdu\r\nContent-Disposition: form-data; name="is_demand"\r\n\r\ntrue\r\n------WebKitFormBoundarykuG2DArIBkuTyjdu--\r\n' \
+  --compressed
